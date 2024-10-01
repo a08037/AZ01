@@ -1,11 +1,13 @@
 import pandas as pd
 
-# Загрузка файла с данными
-file_path = 'dz.csv'  # Укажите путь к вашему файлу
-df = pd.read_csv(file_path)
+# Загрузка данных из CSV
+df_bike_sales = pd.read_csv('bike_sales_100k.csv')
 
-# Группировка данных по городу и расчет средней зарплаты
-mean_salary_by_city = df.groupby('City')['Salary'].mean()
+# Вывод первых 5 строк
+print(df_bike_sales.head())
 
-# Вывод результатов
-print(mean_salary_by_city)
+# Вывод информации о данных
+print(df_bike_sales.info())
+
+# Статистическое описание данных
+print(df_bike_sales.describe())
